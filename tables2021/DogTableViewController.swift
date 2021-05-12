@@ -46,7 +46,10 @@ class DogTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)//replaced string with our own label from story board
 
-        cell.textLabel?.text = allDogs[indexPath.row].title
+        cell.textLabel?.text = allDogs[indexPath.row].title//title
+        cell.detailTextLabel?.text = allDogs[indexPath.row].text//subtitle
+        cell.imageView?.image = UIImage(named: allDogs[indexPath.row].image)//image from assets
+
 
         return cell
     }//function was uncomented
